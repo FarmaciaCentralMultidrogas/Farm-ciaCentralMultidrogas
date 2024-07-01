@@ -7,8 +7,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
         body, html {
             margin: 0;
@@ -23,7 +23,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            animation: fadeIn 1.5s ease-in;
             background: linear-gradient(to bottom, transparent 200px, #273689 200px); /* Azul */
         }
         .profile-pic {
@@ -57,7 +56,7 @@
         .links {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             width: 100%;
         }
         .link {
@@ -74,6 +73,15 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+        .link:nth-child(2) {
+            animation-delay: 0.2s; /* Atraso para o segundo botão */
+        }
+        .link:nth-child(3) {
+            animation-delay: 0.4s; /* Atraso para o terceiro botão */
         }
         .link img {
             width: 100%; /* Ocupa todo o espaço do botão */
@@ -107,7 +115,6 @@
             fbLink.addEventListener('click', function(e) {
                 e.preventDefault();
                 var fbAppUrl = 'fb://page/753315818054841'; // ID da página no Facebook
-
                 var webUrl = 'https://www.facebook.com/753315818054841';
 
                 // Tentar abrir o app do Facebook
@@ -138,3 +145,4 @@
     </script>
 </body>
 </html>
+
