@@ -10,6 +10,10 @@
             from { opacity: 0; transform: translateX(-20px); }
             to { opacity: 1; transform: translateX(0); }
         }
+        @keyframes buttonAnimation {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
         body, html {
             margin: 0;
             padding: 0;
@@ -25,7 +29,7 @@
             align-items: center;
             position: relative;
         }
-       .container::before {
+        .container::before {
             content: '';
             position: absolute;
             top: 0;
@@ -110,6 +114,7 @@
             position: relative;
             z-index: 2;
             overflow: hidden;
+            animation: buttonAnimation 2s ease-in-out infinite alternate;
         }
         .link img {
             width: 80%;
@@ -182,4 +187,3 @@
     </script>
 </body>
 </html>
-
